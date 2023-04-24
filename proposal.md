@@ -2,7 +2,7 @@
 
 ## Project Description
 
-A block pushing puzzle game with unique mechanics and features, custom sprites and music, and many levels
+A block pushing puzzle game with unique mechanics and polished gameplay.
 
 ## Needs to have
 
@@ -14,7 +14,9 @@ A block pushing puzzle game with unique mechanics and features, custom sprites a
 
 ## Nice to have
 
+-ability to hold down movement keys rather than repeatedly hitting them
 -custom sprites and music
+-sprites displayed above grid for smooth movement
 -undo button
 -more levels
 -more mechanics (rails, more box types?)
