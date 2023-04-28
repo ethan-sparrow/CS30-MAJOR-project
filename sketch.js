@@ -62,22 +62,18 @@ function keyPressed() {
 
   if (key === "w") {
     dy--;
-    will_move = true;
+    update_grid(dx, dy);
   }
   if (key === "s") {
     dy++;
-    will_move = true;
+    update_grid(dx, dy);
   }
   if (key === "a") {
     dx--;
-    will_move = true;
+    update_grid(dx, dy);
   }
   if (key === "d") {
     dx++;
-    will_move = true;
-  }
-
-  if (will_move) {
     update_grid(dx, dy);
   }
 }
@@ -85,28 +81,62 @@ function keyPressed() {
 function update_grid(player_dx, player_dy) {
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
+
       //player updates
       if (grid[y][x].topLayer === "player") {
+
         //a system to stop players from moving into other players or boxes when against a wall
         if (grid[y + player_dy][x + player_dx].topLayer === "player" || grid[y + player_dy][x + player_dx].topLayer === "box") {
           let lookingAhead = true;
           for (let i = 1; lookingAhead; i++) {
 
+            //dont move if theres a wall down the line
             if (grid[y + player_dy + i][x + player_dx + i].topLayer === "wall") {
               lookingAhead = false;
             }
 
+            //move if theres an empty space
             if (grid[y + player_dy + i][x + player_dx + i].topLayer === "empty") {
               lookingAhead = false;
-              grid[y + player_dy][x + player_dx].tempVar = "player";
-              if (grid[y][x].tempVar === "none") {
-                grid[y][x].tempVar = "empty";
-              }
+              cell_movement(x, y, player_dx, player_dy, "player");
             }
+            console.log(i);
+            //if theres no wall or empty on topLayer, it must be a player or box. DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
           }
+        }
+
+        if (grid[y + player_dy][x + player_dx].topLayer === "empty") {
+          cell_movement(x, y, player_dx, player_dy, "player");
+        }
+
+        if (grid[y + player_dy][x + player_dx].topLayer === "box") {
+          cell_movement(x, y, player_dx, player_dy, "player");
+          cell_movement(x + player_dx, y + player_dy, player_dx, player_dy, "box");
         }
       }
     }
+  }
+  for (let y = 0; y < ROWS; y++) {
+    for (let x = 0; x < COLS; x++) {
+      if (grid[y][x].tempVar === "ground") {
+        grid[y][x].bottomLayer = "ground";
+      }
+      else if (grid[y][x].tempVar !== "none") {
+        grid[y][x].topLayer = grid[y][x].tempVar;
+        grid[y][x].tempVar = "none";
+      }
+    }
+  }
+}
+
+
+function cell_movement(x, y, dx, dy, cellType) {
+  //move the player by updating the tempVars
+  grid[y + dy][x + dx].tempVar = cellType;
+
+  //in case a player or box is going to move into this space, it wont overwrite the tempVar
+  if (grid[y][x].tempVar === "none") {
+    grid[y][x].tempVar = "empty";
   }
 }
 
