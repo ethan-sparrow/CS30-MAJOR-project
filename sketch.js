@@ -10,10 +10,26 @@ const COLS = 20;
 let cellSize;
 let grid;
 let levelMaking = false;
+let currentLevel = 0;
+let levels = [];
+
+function preload() {
+  levels.push(loadJSON("levels/0.json"));
+//   levels.push(loadJSON("level1.json"));
+//   levels.push(loadJSON("level2.json"));
+//   levels.push(loadJSON("level3.json"));
+//   levels.push(loadJSON("level4.json"));
+//   levels.push(loadJSON("level5.json"));
+//   levels.push(loadJSON("level6.json"));
+//   levels.push(loadJSON("level7.json"));
+//   levels.push(loadJSON("level8.json"));
+//   levels.push(loadJSON("level9.json"));
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  grid = createEmpty2dArray(ROWS, COLS);
+  // grid = createEmpty2dArray(ROWS, COLS);
+  loadLevel();
 
   if (width < height) {
     cellSize = width/COLS;
@@ -52,28 +68,32 @@ function keyPressed() {
       grid[y][x].bottomLayer = "hole";
       grid[y][x].topLayer = "empty";
     }
+
+    //used to save levels ive made
+    if (key === ".") {
+      saveJSON(grid, "level");
+    }
   }
 
   //player movement
 
   let dx = 0;
   let dy = 0;
-  let will_move = false;
 
   if (key === "w") {
     dy--;
-    update_grid(dx, dy);
   }
   if (key === "s") {
-    dy++;
-    update_grid(dx, dy);
+    dy++; 
   }
   if (key === "a") {
     dx--;
-    update_grid(dx, dy);
   }
   if (key === "d") {
     dx++;
+  }
+
+  if (dx !== 0 || dy !== 0) {
     update_grid(dx, dy);
   }
 }
@@ -138,35 +158,60 @@ function update_grid(player_dx, player_dy) {
             // if theres no wall, box or empty on topLayer, it must be a player, repeat looking one more cell ahead.
             // DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
           }
+
           
         }
 
         if (grid[y + player_dy][x + player_dx].topLayer === "empty") {
           cell_movement(x, y, player_dx, player_dy, "player");
+          
         }
 
+        
+
       }
+
+      
     }
   }
+  let remainingHoles = 0;
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
-      if (grid[y][x].tempVar === "ground") {
+      if (grid[y][x].tempVar === "filledHole") {
         grid[y][x].bottomLayer = "ground";
+        grid[y][x].topLayer = "empty";
+        grid[y][x].tempVar = "none";
       }
       else if (grid[y][x].tempVar !== "none") {
         grid[y][x].topLayer = grid[y][x].tempVar;
         grid[y][x].tempVar = "none";
       }
+
+      //tracks the holes left in the level and finishes the level when its done
+      if (grid[y][x].bottomLayer === "hole") {
+        remainingHoles++;
+      }
     }
+  }
+  if (remainingHoles === 0) {
+    //currentLevel++;
+    //loadLevel();
+    console.log("no holes");
   }
 }
 
 
 function cell_movement(x, y, dx, dy, cellType) {
-  //move the player by updating the tempVars
-  grid[y + dy][x + dx].tempVar = cellType;
+  //move the cell by updating the tempVars
+  if (grid[y + dy][x + dx].bottomLayer === "hole") {
+    grid[y + dy][x + dx].tempVar = "filledHole";
+  }
+  else {
+    grid[y + dy][x + dx].tempVar = cellType;
+  }
+  
 
-  //if a player or box is going to move into this space, it wont overwrite the tempVar
+  //if a cell is going to move into this space, it wont overwrite the tempVar
   if (grid[y][x].tempVar === "none") {
     grid[y][x].tempVar = "empty";
   }
@@ -213,6 +258,12 @@ function createEmpty2dArray(ROWS, COLS) {
   }
   return newGrid;
 }
+
+function loadLevel() {
+  //loads the next level
+  grid = levels[currentLevel];
+}
+
 
 // const ROWS = 30;
 // const COLS = 30;
