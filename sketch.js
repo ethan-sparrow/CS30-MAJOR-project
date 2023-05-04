@@ -14,8 +14,10 @@ let currentLevel = 0;
 let levels = [];
 
 function preload() {
+  //NOTE TO SELF: consider using `${}` to turn this into a for loop
+
   levels.push(loadJSON("levels/0.json"));
-//   levels.push(loadJSON("level1.json"));
+  levels.push(loadJSON("levels/1.json"));
 //   levels.push(loadJSON("level2.json"));
 //   levels.push(loadJSON("level3.json"));
 //   levels.push(loadJSON("level4.json"));
@@ -75,7 +77,7 @@ function keyPressed() {
     }
   }
 
-  //player movement
+  //player input
 
   let dx = 0;
   let dy = 0;
@@ -96,6 +98,12 @@ function keyPressed() {
   if (dx !== 0 || dy !== 0) {
     update_grid(dx, dy);
   }
+
+  if (key === "r") {
+    let resetLevel = `levels/${currentLevel}.json`;
+    levels.splice(currentLevel, 1, loadJSON(resetLevel));
+    loadLevel();
+  }
 }
 
 function update_grid(player_dx, player_dy) {
@@ -104,7 +112,7 @@ function update_grid(player_dx, player_dy) {
 
       //player updates
       if (grid[y][x].topLayer === "player") {
-        //consider making this a function, espesially if more boxes are added
+        //NOTE TO SELF: consider making this a function, espesially if more boxes are added
 
         //a system to stop players from moving into other players or boxes when against eachother
         let lookingAhead = true;
@@ -156,7 +164,7 @@ function update_grid(player_dx, player_dy) {
   
               
             // if theres no wall, box or empty on topLayer, it must be a player, repeat looking one more cell ahead.
-            // DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
+            // NOTE TO SELF: DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
           }
 
           
@@ -193,9 +201,9 @@ function update_grid(player_dx, player_dy) {
       }
     }
   }
-  if (remainingHoles === 0) {
-    //currentLevel++;
-    //loadLevel();
+  if (remainingHoles === 0 && !levelMaking) {
+    currentLevel++;
+    loadLevel();
     console.log("no holes");
   }
 }
@@ -260,7 +268,7 @@ function createEmpty2dArray(ROWS, COLS) {
 }
 
 function loadLevel() {
-  //loads the next level
+  //loads the current level
   grid = levels[currentLevel];
 }
 
