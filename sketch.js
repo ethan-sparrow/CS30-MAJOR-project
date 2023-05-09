@@ -48,6 +48,12 @@ function keyPressed() {
   if (key === "`") {
     levelMaking = true;
   }
+
+  if (key === "r") {
+    let resetLevel = `levels/${currentLevel}.json`;
+    levels.splice(currentLevel, 1, loadJSON(resetLevel));
+    loadLevel();
+  }
   
   if (levelMaking) {
     if ( key === "e") {
@@ -99,11 +105,7 @@ function keyPressed() {
     update_grid(dx, dy);
   }
 
-  if (key === "r") {
-    let resetLevel = `levels/${currentLevel}.json`;
-    levels.splice(currentLevel, 1, loadJSON(resetLevel));
-    loadLevel();
-  }
+  
 }
 
 function update_grid(player_dx, player_dy) {
