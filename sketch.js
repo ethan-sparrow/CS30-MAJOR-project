@@ -7,6 +7,7 @@
 
 const ROWS = 20;
 const COLS = 20;
+const TOTALLEVELS = 10;
 let cellSize;
 let grid;
 let levelMaking = false;
@@ -47,12 +48,6 @@ function keyPressed() {
   let y = Math.floor(mouseY/cellSize);
   if (key === "`") {
     levelMaking = true;
-  }
-
-  if (key === "r") {
-    let resetLevel = `levels/${currentLevel}.json`;
-    levels.splice(currentLevel, 1, loadJSON(resetLevel));
-    loadLevel();
   }
   
   if (levelMaking) {
@@ -105,7 +100,15 @@ function keyPressed() {
     update_grid(dx, dy);
   }
 
-  
+
+  if (key === "r") {
+    //let resetLevel = `levels/${currentLevel}.json`;
+    let resetLevels = [];
+    resetLevels.push(loadJSON("levels/0.json"));
+    resetLevels.push(loadJSON("levels/1.json"));
+    levels = resetLevels;
+    loadLevel();
+  }
 }
 
 function update_grid(player_dx, player_dy) {
