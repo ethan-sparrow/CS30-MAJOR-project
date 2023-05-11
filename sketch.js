@@ -13,20 +13,25 @@ let grid;
 let levelMaking = false;
 let currentLevel = 0;
 let levels = [];
+let copyLevels = [];
 
 function preload() {
   //NOTE TO SELF: consider using `${}` to turn this into a for loop
+  let levelAmount = 2; //NOTE TO SELF: change when new levels are added
 
-  levels.push(loadJSON("levels/0.json"));
-  levels.push(loadJSON("levels/1.json"));
-//   levels.push(loadJSON("level2.json"));
-//   levels.push(loadJSON("level3.json"));
-//   levels.push(loadJSON("level4.json"));
-//   levels.push(loadJSON("level5.json"));
-//   levels.push(loadJSON("level6.json"));
-//   levels.push(loadJSON("level7.json"));
-//   levels.push(loadJSON("level8.json"));
-//   levels.push(loadJSON("level9.json"));
+  for (let i = 0; i < levelAmount; i++) {
+    levels.push(loadJSON(`levels/${i}.json`));
+  }
+
+  for (let i = 0; i < levels.length; i++) {
+    //ugh
+    for (let y = 0; y < ROWS; y++) {
+      for (let x = 0; x < COLS; x++) {
+
+      }
+    }
+  }
+  
 }
 
 function setup() {
@@ -103,10 +108,7 @@ function keyPressed() {
 
   if (key === "r") {
     //let resetLevel = `levels/${currentLevel}.json`;
-    let resetLevels = [];
-    resetLevels.push(loadJSON("levels/0.json"));
-    resetLevels.push(loadJSON("levels/1.json"));
-    levels = resetLevels;
+ 
     loadLevel();
   }
 }
