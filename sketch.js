@@ -16,22 +16,13 @@ let levels = [];
 let copyLevels = [];
 
 function preload() {
-  //NOTE TO SELF: consider using `${}` to turn this into a for loop
   let levelAmount = 2; //NOTE TO SELF: change when new levels are added
 
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
+    copyLevels.push(loadJSON(`levels/${i}.json`));
   }
 
-  for (let i = 0; i < levels.length; i++) {
-    //ugh
-    for (let y = 0; y < ROWS; y++) {
-      for (let x = 0; x < COLS; x++) {
-
-      }
-    }
-  }
-  
 }
 
 function setup() {
@@ -108,7 +99,7 @@ function keyPressed() {
 
   if (key === "r") {
     //let resetLevel = `levels/${currentLevel}.json`;
- 
+    resetLevel();
     loadLevel();
   }
 }
@@ -272,6 +263,18 @@ function createEmpty2dArray(ROWS, COLS) {
     }
   }
   return newGrid;
+}
+
+function resetLevel() {
+  //copys the values of the cells from 
+  let newGrid = [];
+  for (let y = 0; y < ROWS; y++) {
+    newGrid.push([]);
+    for (let x = 0; x < COLS; x++) {
+      newGrid[y].push(structuredClone(copyLevels[currentLevel][y][x]));
+    }
+  }
+  levels[currentLevel] = newGrid;
 }
 
 function loadLevel() {
