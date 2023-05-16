@@ -10,9 +10,31 @@ const COLS = 20;
 let cellSize;
 let grid;
 let levelMaking = false;
-let currentLevel = 0;
+let currentLevel = -2;
 let levels = [];
-let inLevel = false;
+let buttons = [];
+
+class Button {
+  constructor (x, y, size, level) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.level = level;
+  }
+
+  display() {
+    rectMode(CENTER);
+    fill ("grey");
+    rect(this.x, this.y, this.size, this.size/4);
+  }
+
+  pressed() {
+    if(mouseX > this.x - this.size/2 && mouseY > this.y - this.size/4 && mouseX < this.x + this.size/2 && mouseY < this.y + this.size/4) {
+      currentLevel = this.level;
+      loadLevel();
+    }
+  }
+}
 
 function preload() {
   let levelAmount = 5; //NOTE TO SELF: change when new levels are added
@@ -35,7 +57,7 @@ function setup() {
 }
 
 function keyPressed() {
-  if (inLevel) {
+  if (currentLevel >= 0) {
   //for editing purposes
     let x = Math.floor(mouseX/cellSize);
     let y = Math.floor(mouseY/cellSize);
@@ -218,8 +240,9 @@ function cell_movement(x, y, dx, dy, cellType) {
 }
 
 function draw() {
+  background("pink");
   //colours every cell
-  if (inLevel) {
+  if (currentLevel >= 0) {
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {
         if (grid[y][x].bottomLayer === "ground") {
@@ -241,17 +264,15 @@ function draw() {
       }
     }
   }
-  else {
-    menuDisplay();
+  else if (currentLevel === -2) {
+    
+    buttons[0].display();
   }
 }
 
 function mousePressed() {
-  if (!inLevel) {
-    if (mouseX > 500 && mouseX < 700 && mouseY > 500 && mouseY < 550) {
-      loadLevel();
-      inLevel = true;
-    }
+  if (currentLevel === -2) {
+    buttons[0].pressed();
   }
 }
 
@@ -280,6 +301,13 @@ function createEmpty2dArray(ROWS, COLS) {
 }
 
 function loadLevel() {
-  //loads the current level
-  grid = structuredClone(levels[currentLevel]);
+  buttons = [];
+  if (currentLevel >= 0) {
+    //loads the current level
+    grid = structuredClone(levels[currentLevel]);
+  }
+  else if (currentLevel === -2) {
+    let someButton = new Button(width/2, height/2, 200, 0);
+    buttons.push(someButton);
+  }
 }
