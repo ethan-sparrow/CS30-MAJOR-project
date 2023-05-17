@@ -9,8 +9,8 @@ i am going to continue working on my puzzle game and try to make it look and fee
 - sprites and music
 - reset button /
 - better player movement (no more wierd interactions when next to other players) /
-- main menu
-- level select
+- main menu /
+- level select /
 - game updates on player input rather than every frame (easier for new features) /
 
 ## Nice to have
