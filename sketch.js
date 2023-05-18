@@ -13,6 +13,7 @@ let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
 let buttons = [];
+let player;
 
 class Button {
   constructor (x, y, width, height, level) {
@@ -44,6 +45,7 @@ function preload() {
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
   }
+  player = loadImage("images/basketBall.png");
 }
 
 function setup() {
@@ -208,7 +210,7 @@ function update_grid(player_dx, player_dy) {
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x].tempVar === "filledHole") {
-        grid[y][x].bottomLayer = "ground";
+        grid[y][x].bottomLayer = "filledHole";
         grid[y][x].topLayer = "empty";
         grid[y][x].tempVar = "none";
       }
@@ -255,6 +257,9 @@ function draw() {
         if (grid[y][x].bottomLayer === "ground") {
           fill("pink");
         }
+        if (grid[y][x].bottomLayer === "filledHole") {
+          fill("silver");
+        }
         if (grid[y][x].bottomLayer === "hole") {
           fill("black");
         }
@@ -268,6 +273,9 @@ function draw() {
           fill("blue");
         }
         rect(x*cellSize, y*cellSize, cellSize, cellSize);
+
+        // cellDisplay(grid[y][x].topLayer, x, y);
+        // cellDisplay(grid[y][x].bottomLayer, x, y);
       }
     }
   }
@@ -276,6 +284,10 @@ function draw() {
       buttons[i].display();
     }
   }
+}
+
+function cellDisplay(cellType, x, y) {
+  image(cellType, x * cellSize, y * cellSize, cellSize);
 }
 
 function mousePressed() {
