@@ -13,7 +13,8 @@ let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
 let buttons = [];
-let player;
+let player, ground, boxi, wall, hole, filledHole;
+let imageMap = new Map();
 
 class Button {
   constructor (x, y, width, height, level) {
@@ -46,6 +47,11 @@ function preload() {
     levels.push(loadJSON(`levels/${i}.json`));
   }
   player = loadImage("images/basketBall.png");
+  ground = loadImage("images/tarmak.png");
+  boxi = loadImage("images/box.png");
+  wall = loadImage("images/wall.png");
+  hole = loadImage("images/hole.png");
+  filledHole = loadImage("images/filledHole.png");
 }
 
 function setup() {
@@ -254,28 +260,29 @@ function draw() {
   if (currentLevel >= 0) {
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {
-        if (grid[y][x].bottomLayer === "ground") {
-          fill("pink");
-        }
-        if (grid[y][x].bottomLayer === "filledHole") {
-          fill("silver");
-        }
-        if (grid[y][x].bottomLayer === "hole") {
-          fill("black");
-        }
-        if (grid[y][x].topLayer === "wall") {
-          fill("purple");
-        }
-        if (grid[y][x].topLayer === "player") {
-          fill("grey");
-        }
-        if (grid[y][x].topLayer === "box") {
-          fill("blue");
-        }
-        rect(x*cellSize, y*cellSize, cellSize, cellSize);
+        // if (grid[y][x].bottomLayer === "ground") {
+        //   fill("pink");
+        // }
+        // if (grid[y][x].bottomLayer === "filledHole") {
+        //   fill("silver");
+        // }
+        // if (grid[y][x].bottomLayer === "hole") {
+        //   fill("black");
+        // }
+        // if (grid[y][x].topLayer === "wall") {
+        //   fill("purple");
+        // }
+        // if (grid[y][x].topLayer === "player") {
+        //   fill("grey");
+        // }
+        // if (grid[y][x].topLayer === "box") {
+        //   fill("blue");
+        // }
+        // rect(x*cellSize, y*cellSize, cellSize, cellSize);
 
-        // cellDisplay(grid[y][x].topLayer, x, y);
-        // cellDisplay(grid[y][x].bottomLayer, x, y);
+        
+        cellDisplay(grid[y][x].bottomLayer, x, y);
+        cellDisplay(grid[y][x].topLayer, x, y);
       }
     }
   }
@@ -287,7 +294,24 @@ function draw() {
 }
 
 function cellDisplay(cellType, x, y) {
-  image(cellType, x * cellSize, y * cellSize, cellSize);
+  if (cellType === "ground") {
+    image(ground, x * cellSize, y * cellSize, cellSize, cellSize);
+  }
+  if (cellType === "player") {
+    image(player, x * cellSize, y * cellSize, cellSize, cellSize);
+  }
+  if (cellType === "box") {
+    image(boxi, x * cellSize, y * cellSize, cellSize, cellSize);
+  }
+  if (cellType === "wall") {
+    image(wall, x * cellSize, y * cellSize, cellSize, cellSize);
+  }
+  if (cellType === "hole") {
+    image(hole, x * cellSize, y * cellSize, cellSize, cellSize);
+  }
+  if (cellType === "filledHole") {
+    image(filledHole, x * cellSize, y * cellSize, cellSize, cellSize);
+  }
 }
 
 function mousePressed() {
