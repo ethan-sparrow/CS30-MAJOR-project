@@ -13,7 +13,7 @@ let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
 let buttons = [];
-let player, ground, boxi, wall, hole, filledHole;
+let player, ground, boxi, wall, hole, filledHole, title;
 let imageMap = new Map();
 
 class Button {
@@ -46,12 +46,23 @@ function preload() {
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
   }
-  player = loadImage("images/basketBall.png");
-  ground = loadImage("images/tarmak.png");
+
+  //there HAS to be a better way to do this...
+  player = loadImage("images/player.png");
+  ground = loadImage("images/ground.png");
   boxi = loadImage("images/box.png");
   wall = loadImage("images/wall.png");
   hole = loadImage("images/hole.png");
   filledHole = loadImage("images/filledHole.png");
+
+  title = loadImage("images/title.png");
+
+  imageMap.set("player", player);
+  imageMap.set("ground", ground);
+  imageMap.set("box", boxi);
+  imageMap.set("wall", wall);
+  imageMap.set("hole", hole);
+  imageMap.set("filledHole", filledHole);
 }
 
 function setup() {
@@ -195,21 +206,12 @@ function update_grid(player_dx, player_dy) {
               
             // if theres no wall, box or empty on topLayer, it must be a player, repeat looking one more cell ahead.
             // NOTE TO SELF: DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
-          }
-
-          
+          } 
         }
-
         if (grid[y + player_dy][x + player_dx].topLayer === "empty") {
-          cell_movement(x, y, player_dx, player_dy, "player");
-          
+          cell_movement(x, y, player_dx, player_dy, "player"); 
         }
-
-        
-
       }
-
-      
     }
   }
   let remainingHoles = 0;
@@ -258,29 +260,9 @@ function draw() {
   background("pink");
   //colours every cell
   if (currentLevel >= 0) {
+    imageMode(CORNER);
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {
-        // if (grid[y][x].bottomLayer === "ground") {
-        //   fill("pink");
-        // }
-        // if (grid[y][x].bottomLayer === "filledHole") {
-        //   fill("silver");
-        // }
-        // if (grid[y][x].bottomLayer === "hole") {
-        //   fill("black");
-        // }
-        // if (grid[y][x].topLayer === "wall") {
-        //   fill("purple");
-        // }
-        // if (grid[y][x].topLayer === "player") {
-        //   fill("grey");
-        // }
-        // if (grid[y][x].topLayer === "box") {
-        //   fill("blue");
-        // }
-        // rect(x*cellSize, y*cellSize, cellSize, cellSize);
-
-        
         cellDisplay(grid[y][x].bottomLayer, x, y);
         cellDisplay(grid[y][x].topLayer, x, y);
       }
@@ -290,27 +272,16 @@ function draw() {
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].display();
     }
+    if (currentLevel === -2) {
+      imageMode(CENTER);
+      image(title, width/2, height/2.5, 800, 400);
+    }
   }
 }
 
 function cellDisplay(cellType, x, y) {
-  if (cellType === "ground") {
-    image(ground, x * cellSize, y * cellSize, cellSize, cellSize);
-  }
-  if (cellType === "player") {
-    image(player, x * cellSize, y * cellSize, cellSize, cellSize);
-  }
-  if (cellType === "box") {
-    image(boxi, x * cellSize, y * cellSize, cellSize, cellSize);
-  }
-  if (cellType === "wall") {
-    image(wall, x * cellSize, y * cellSize, cellSize, cellSize);
-  }
-  if (cellType === "hole") {
-    image(hole, x * cellSize, y * cellSize, cellSize, cellSize);
-  }
-  if (cellType === "filledHole") {
-    image(filledHole, x * cellSize, y * cellSize, cellSize, cellSize);
+  if (cellType !== "empty") {
+    image(imageMap.get(cellType), x * cellSize, y * cellSize, cellSize, cellSize);
   }
 }
 
@@ -323,24 +294,6 @@ function mousePressed() {
   }
 }
 
-function createEmpty2dArray(ROWS, COLS) {
-  //leftover / used for level creation
-  
-  let newGrid = [];
-  for (let y = 0; y < ROWS; y++) {
-    newGrid.push([]);
-    for (let x = 0; x < COLS; x++) {
-      let emptyCell = {
-        bottomLayer: "ground",
-        topLayer: "empty",
-        tempVar: "none",
-      };
-      newGrid[y].push(emptyCell);
-    }
-  }
-  return newGrid;
-}
-
 function loadLevel() {
   buttons = [];
   if (currentLevel >= 0) {
@@ -348,7 +301,7 @@ function loadLevel() {
     grid = structuredClone(levels[currentLevel]);
   }
   else if (currentLevel === -2) {
-    let someButton = new Button(width/2, height/2, 200, 50, -1);
+    let someButton = new Button(width/2, height/1.25, 200, 50, -1);
     buttons.push(someButton);
   }
   else if (currentLevel === -1) {
