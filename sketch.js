@@ -9,6 +9,7 @@ const ROWS = 20;
 const COLS = 20;
 let cellSize;
 let grid;
+let gridMemory = [];
 let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
@@ -17,18 +18,23 @@ let player, ground, boxi, wall, hole, filledHole, title;
 let imageMap = new Map();
 
 class Button {
-  constructor (x, y, width, height, level) {
+  constructor (x, y, width, height, level, text) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
     this.level = level;
+    this.text = text;
   }
 
   display() {
     rectMode(CENTER);
+    textAlign(CENTER, CENTER);
+    textSize(this.height/2);
     fill ("grey");
     rect(this.x, this.y, this.width, this.height);
+    fill("black");
+    text(this.text, this.x, this.y);
   }
 
   pressed() {
@@ -69,12 +75,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   loadLevel();
 
-  if (width < height) {
-    cellSize = width/COLS;
-  }
-  else {
-    cellSize = height/ROWS;
-  }
+  cellSize = height/ROWS;
 }
 
 function keyPressed() {
@@ -139,6 +140,14 @@ function keyPressed() {
     if (key === "r") {
       loadLevel();
     }
+
+    if (key === "x") {
+      if (gridMemory.length > 0) {
+        grid = structuredClone(gridMemory[gridMemory.length - 1]);
+        gridMemory.pop();
+      }
+      
+    }
     
   }
   if (keyCode === BACKSPACE) {
@@ -148,6 +157,8 @@ function keyPressed() {
 }
 
 function update_grid(player_dx, player_dy) {
+  gridMemory.push(structuredClone(grid));
+
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
 
@@ -240,7 +251,6 @@ function update_grid(player_dx, player_dy) {
   }
 }
 
-
 function cell_movement(x, y, dx, dy, cellType) {
   //move the cell by updating the tempVars
   if (grid[y + dy][x + dx].bottomLayer === "hole") {
@@ -261,6 +271,7 @@ function draw() {
   //colours every cell
   if (currentLevel >= 0) {
     imageMode(CORNER);
+    translate(width/2 - ROWS*cellSize/2, 0);
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {
         cellDisplay(grid[y][x].bottomLayer, x, y);
@@ -279,9 +290,11 @@ function draw() {
   }
 }
 
-function cellDisplay(cellType, x, y) {
+function cellDisplay(cellType, gridX, gridY) {
   if (cellType !== "empty") {
-    image(imageMap.get(cellType), x * cellSize, y * cellSize, cellSize, cellSize);
+    let x = gridX * cellSize;
+    let y = gridY * cellSize;
+    image(imageMap.get(cellType), x, y, cellSize, cellSize);
   }
 }
 
@@ -298,17 +311,18 @@ function loadLevel() {
   buttons = [];
   if (currentLevel >= 0) {
     //loads the current level
+    gridMemory = [];
     grid = structuredClone(levels[currentLevel]);
   }
   else if (currentLevel === -2) {
-    let someButton = new Button(width/2, height/1.25, 200, 50, -1);
+    let someButton = new Button(width/2, height/1.25, 200, 50, -1, "Start");
     buttons.push(someButton);
   }
   else if (currentLevel === -1) {
     let buttonLevel = 0;
     for (let y = 0; y < 3; y++) {
       for (let x = 0; x < 5; x++) {
-        let someButton = new Button(width/4 + x * width/8, height/4 + y * height/4, 50, 50, buttonLevel);
+        let someButton = new Button(width/4 + x * width/8, height/4 + y * height/4, 50, 50, buttonLevel, buttonLevel + 1);
         buttons.push(someButton);
         buttonLevel++;
       }
