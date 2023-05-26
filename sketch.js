@@ -5,13 +5,13 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-const ROWS = 20;
-const COLS = 20;
+const ROWS = 15;
+const COLS = 15;
 let cellSize;
 let grid;
 let gridMemory = [];
 let levelMaking = false;
-let currentLevel = -2;
+let currentLevel = 0;
 let levels = [];
 let buttons = [];
 let player, ground, boxi, wall, hole, filledHole, title;
@@ -47,7 +47,7 @@ class Button {
 }
 
 function preload() {
-  let levelAmount = 5; //NOTE TO SELF: change when new levels are added
+  let levelAmount = 2; //NOTE TO SELF: change when new levels are added
 
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
@@ -81,14 +81,16 @@ function setup() {
 function keyPressed() {
   if (currentLevel >= 0) {
   //for editing purposes
-    let x = Math.floor(mouseX/cellSize);
-    let y = Math.floor(mouseY/cellSize);
+    
     if (key === "`") {
       levelMaking = true;
     }
   
     if (levelMaking) {
-      if ( key === "e") {
+      let x = Math.floor(mouseX/cellSize);
+      let y = Math.floor(mouseY/cellSize);
+
+      if ( key === "g") {
         grid[y][x].bottomLayer = "ground";
         grid[y][x].topLayer = "empty"; 
       }
@@ -108,10 +110,17 @@ function keyPressed() {
         grid[y][x].bottomLayer = "hole";
         grid[y][x].topLayer = "empty";
       }
+      if ( key === "e") {
+        grid[y][x].bottomLayer = "empty";
+        grid[y][x].topLayer = "empty";
+      }
 
       //used to save levels ive made
       if (key === ".") {
         saveJSON(grid, "level");
+      }
+      if (key === ",") {
+        grid = createEmpty2dArray(ROWS, COLS);
       }
     }
 
@@ -271,7 +280,9 @@ function draw() {
   //colours every cell
   if (currentLevel >= 0) {
     imageMode(CORNER);
-    translate(width/2 - ROWS*cellSize/2, 0);
+    if (!levelMaking) {
+      translate(width/2 - ROWS*cellSize/2, 0);
+    }
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {
         cellDisplay(grid[y][x].bottomLayer, x, y);
@@ -328,4 +339,22 @@ function loadLevel() {
       }
     }
   }
+}
+
+function createEmpty2dArray(ROWS, COLS) {
+  //leftover / used for level creation
+  
+  let newGrid = [];
+  for (let y = 0; y < ROWS; y++) {
+    newGrid.push([]);
+    for (let x = 0; x < COLS; x++) {
+      let emptyCell = {
+        bottomLayer: "empty",
+        topLayer: "empty",
+        tempVar: "none",
+      };
+      newGrid[y].push(emptyCell);
+    }
+  }
+  return newGrid;
 }
