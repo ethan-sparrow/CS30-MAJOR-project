@@ -11,7 +11,7 @@ let cellSize;
 let grid;
 let gridMemory = [];
 let levelMaking = false;
-let currentLevel = 0;
+let currentLevel = -2;
 let levels = [];
 let buttons = [];
 let player, ground, boxi, wall, hole, filledHole, title;
@@ -114,6 +114,10 @@ function keyPressed() {
         grid[y][x].bottomLayer = "empty";
         grid[y][x].topLayer = "empty";
       }
+      if ( key === "v") {
+        grid[y][x].bottomLayer = "vRail";
+        grid[y][x].topLayer = "empty";
+      }
 
       //used to save levels ive made
       if (key === ".") {
@@ -175,6 +179,8 @@ function update_grid(player_dx, player_dy) {
       if (grid[y][x].topLayer === "player") {
         //NOTE TO SELF: consider making this a function, espesially if more boxes are added
 
+        //is this stupid..?
+
         //a system to stop players from moving into other players or boxes when against eachother
         let lookingAhead = true;
         let lastSeenIsBox = false;
@@ -185,12 +191,19 @@ function update_grid(player_dx, player_dy) {
             lookingAhead = false;
           }
 
+          if (grid[y + player_dy * i][x + player_dx * i].bottomLayer === "vRail") {
+            if (lastSeenIsBox || player_dx !== 0) {
+              lookingAhead = false;
+            }
+          }
+
           //move if theres an empty space
           if (grid[y + player_dy * i][x + player_dx * i].topLayer === "empty") {
             lookingAhead = false;
             cell_movement(x, y, player_dx, player_dy, "player");
           }
 
+          //dont move if there are 2 boxes in a row
           if (grid[y + player_dy * i][x + player_dx * i].topLayer === "box") {
             if (lastSeenIsBox) {
               lookingAhead = false;
@@ -203,10 +216,13 @@ function update_grid(player_dx, player_dy) {
             lastSeenIsBox = false;
           }
 
+          if (grid[y + player_dy * i][x + player_dx * i].topLayer === "playerOnRailUp" || grid[y + player_dy * i][x + player_dx * i].topLayer === "playerOnRailDown") {
+            lookingAhead = false;
+          }
+
           // if theres no wall or empty on topLayer, it must be a player or box, repeat looking one more cell ahead. 
-          // DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
+          // NOTE TO SELF: DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
         }
-        
 
         if (grid[y + player_dy][x + player_dx].topLayer === "box") {
           let lookingAhead = true;
@@ -231,6 +247,43 @@ function update_grid(player_dx, player_dy) {
         if (grid[y + player_dy][x + player_dx].topLayer === "empty") {
           cell_movement(x, y, player_dx, player_dy, "player"); 
         }
+      }
+      if (grid[y][x].topLayer === "playerOnRailUp") {
+        let lookingAhead = true;
+        let lastSeenIsBox = false;
+        for (let i = 1; lookingAhead; i++) {
+            
+          //dont move if theres a wall down the line
+          if (grid[y + player_dy * i][x + player_dx * i].topLayer === "wall" || grid[y + player_dy * i][x + player_dx * i].topLayer === "playerOnRailDown") {
+            lookingAhead = false;
+            grid[y][x].tempVar = "playerOnRailDown"
+          }
+
+          if (grid[y + player_dy * i][x + player_dx * i].bottomLayer === "vRail") {
+            if (lastSeenIsBox) {
+              lookingAhead = false;
+            }
+          }
+
+          //move if theres an empty space
+          if (grid[y + player_dy * i][x + player_dx * i].topLayer === "empty") {
+            lookingAhead = false;
+            cell_movement(x, y, player_dx, player_dy, "player");
+          }
+
+          //dont move if there are 2 boxes in a row
+          if (grid[y + player_dy * i][x + player_dx * i].topLayer === "box") {
+            if (lastSeenIsBox) {
+              lookingAhead = false;
+            }
+
+            lastSeenIsBox = true;
+          }
+
+          else {
+            lastSeenIsBox = false;
+          }
+
       }
     }
   }
@@ -264,6 +317,14 @@ function cell_movement(x, y, dx, dy, cellType) {
   //move the cell by updating the tempVars
   if (grid[y + dy][x + dx].bottomLayer === "hole") {
     grid[y + dy][x + dx].tempVar = "filledHole";
+  }
+  if (grid[y + dy][x + dx].bottomLayer === "vRail") {
+    if (dy === 1) {
+      grid[y + dy][x + dx].tempVar = "playerOnRailDown";
+    }
+    if (dy === -1){
+      grid[y + dy][x + dx].tempVar = "playerOnRailUp";
+    }
   }
   else {
     grid[y + dy][x + dx].tempVar = cellType;
