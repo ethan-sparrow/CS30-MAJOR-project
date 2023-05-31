@@ -14,7 +14,7 @@ let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
 let buttons = [];
-let player, ground, boxi, wall, hole, filledHole, title;
+let player, ground, boxi, wall, hole, filledHole, vRail, title;
 let imageMap = new Map();
 
 class Button {
@@ -60,6 +60,7 @@ function preload() {
   wall = loadImage("images/wall.png");
   hole = loadImage("images/hole.png");
   filledHole = loadImage("images/filledHole.png");
+  vRail = loadImage("images/vRail.png");
 
   title = loadImage("images/title.png");
 
@@ -69,6 +70,7 @@ function preload() {
   imageMap.set("wall", wall);
   imageMap.set("hole", hole);
   imageMap.set("filledHole", filledHole);
+  imageMap.set("vRail", vRail);
 }
 
 function setup() {
@@ -212,7 +214,6 @@ function update_grid(player_dx, player_dy) {
   if (remainingHoles === 0 && !levelMaking) {
     currentLevel++;
     loadLevel();
-    console.log("no holes");
   }
 }
 
@@ -223,13 +224,13 @@ function can_I_Move(x, y, dx, dy, cellType) {
             
     //dont move if theres a wall down the line
     if (grid[y + dy * i][x + dx * i].topLayer === "wall") {
-      stop_looking(x, y, cellType);
+      turnAround(x, y, cellType);
       lookingAhead = false;
     }
 
     if (grid[y + dy * i][x + dx * i].bottomLayer === "vRail") {
       if (lastSeenIsBox || dx !== 0 || cellType === "box") {
-        stop_looking(x, y, cellType);
+        turnAround(x, y, cellType);
         lookingAhead = false;
       }
     }
@@ -237,13 +238,13 @@ function can_I_Move(x, y, dx, dy, cellType) {
     //move if theres an empty space
     if (grid[y + dy * i][x + dx * i].topLayer === "empty") {
       lookingAhead = false;
-      cell_movement(x, y, dx, dy, cellType);
+      cellMovement(x, y, dx, dy, cellType);
     }
 
     //dont move if there are 2 boxes in a row
     if (grid[y + dy * i][x + dx * i].topLayer === "box") {
       if (lastSeenIsBox || cellType === "box") {
-        stop_looking(x, y, cellType);
+        turnAround(x, y, cellType);
         lookingAhead = false;
       }
 
@@ -255,18 +256,18 @@ function can_I_Move(x, y, dx, dy, cellType) {
     }
 
     if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailUp" && dy === 1) {
-      stop_looking(x, y, cellType);
+      turnAround(x, y, cellType);
       lookingAhead = false;
     }
 
     if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailDown" && dy === -1) {
-      stop_looking(x, y, cellType);
+      turnAround(x, y, cellType);
       lookingAhead = false;
     }
 
     if (cellType !== "player" && cellType !== "box") {
       if (grid[y + dy * i][x + dx * i].topLayer === "player") {
-        stop_looking(x, y, cellType);
+        turnAround(x, y, cellType);
         lookingAhead = false;
       }
     }
@@ -276,7 +277,7 @@ function can_I_Move(x, y, dx, dy, cellType) {
   }
 }
 
-function stop_looking(x,y,cellType) {
+function turnAround(x,y,cellType) {
   if (cellType === "playerOnRailUp") {
     grid[y][x].tempVar = "playerOnRailDown";
   }
@@ -285,10 +286,11 @@ function stop_looking(x,y,cellType) {
   }
 }
 
-function cell_movement(x, y, dx, dy, cellType) {
+function cellMovement(x, y, dx, dy, cellType) {
   //move the cell by updating the tempVars
   if (grid[y + dy][x + dx].bottomLayer === "hole") {
     grid[y + dy][x + dx].tempVar = "filledHole";
+    console.log(grid[y + dy][x + dx].tempVar);
   }
   if (grid[y + dy][x].bottomLayer === "vRail") {
     if (dy === 1) {
@@ -298,7 +300,7 @@ function cell_movement(x, y, dx, dy, cellType) {
       grid[y + dy][x].tempVar = "playerOnRailUp";
     }
   }
-  else {
+  else if (grid[y + dy][x + dx].tempVar === "none") {
     grid[y + dy][x + dx].tempVar = cellType;
   }
 

@@ -16,7 +16,7 @@ i am going to continue working on my puzzle game and try to make it look and fee
 
 ## Nice to have
 
--   ability to hold down movement keys rather than repeatedly hitting them X
+-   ability to hold down movement keys rather than repeatedly hitting them 
 -   CUSTOM sprites and music
 -   sprites displayed above grid for smooth movement and idle animation
 - / undo button 
