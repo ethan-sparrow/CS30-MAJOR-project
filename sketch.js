@@ -14,7 +14,7 @@ let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
 let buttons = [];
-let player, ground, boxi, wall, hole, filledHole, vRail, title;
+let player, ground, boxi, wall, hole, filledHole, vRail, title, playerOnRailUp, playerOnRailDown, playerOnRailLeft, playerOnRailRight;
 let imageMap = new Map();
 
 class Button {
@@ -61,6 +61,10 @@ function preload() {
   hole = loadImage("images/hole.png");
   filledHole = loadImage("images/filledHole.png");
   vRail = loadImage("images/vRail.png");
+  playerOnRailUp = loadImage("images/playerOnRailUp.png");
+  playerOnRailDown = loadImage("images/playerOnRailDown.png");
+  playerOnRailLeft = loadImage("images/playerOnRailLeft.png");
+  playerOnRailRight = loadImage("images/playerOnRailRight.png");
 
   title = loadImage("images/title.png");
 
@@ -71,6 +75,10 @@ function preload() {
   imageMap.set("hole", hole);
   imageMap.set("filledHole", filledHole);
   imageMap.set("vRail", vRail);
+  imageMap.set("playerOnRailUp", playerOnRailUp);
+  imageMap.set("playerOnRailDown", playerOnRailDown);
+  imageMap.set("playerOnRailLeft", playerOnRailLeft);
+  imageMap.set("playerOnRailRight", playerOnRailRight);
 }
 
 function setup() {
@@ -118,6 +126,10 @@ function keyPressed() {
       }
       if ( key === "v") {
         grid[y][x].bottomLayer = "vRail";
+        grid[y][x].topLayer = "empty";
+      }
+      if ( key === "b") {
+        grid[y][x].bottomLayer = "hRail";
         grid[y][x].topLayer = "empty";
       }
 
@@ -186,9 +198,33 @@ function update_grid(player_dx, player_dy) {
       }
       if (grid[y][x].topLayer === "playerOnRailUp") {
         can_I_Move(x, y, 0, -1, "playerOnRailUp");
+        if (grid[y - 1][x].topLayer === "box") {
+          can_I_Move(x, y - 1, 0, -1, "box");
+        }
       }
       if (grid[y][x].topLayer === "playerOnRailDown") {
         can_I_Move(x, y, 0, 1, "playerOnRailDown");
+        if (grid[y + 1][x].topLayer === "box") {
+          can_I_Move(x, y + 1, 0, 1, "box");
+        }
+      }
+      if (grid[y][x].topLayer === "playerOnRailLeft") {
+        can_I_Move(x, y, -1, 0, "playerOnRailLeft");
+        if (grid[y][x - 1].topLayer === "box") {
+          can_I_Move(x - 1, y, -1, 0, "box");
+        }
+      }
+      if (grid[y][x].topLayer === "playerOnRailLeft") {
+        can_I_Move(x, y, -1, 0, "playerOnRailLeft");
+        if (grid[y][x - 1].topLayer === "box") {
+          can_I_Move(x - 1, y, -1, 0, "box");
+        }
+      }
+      if (grid[y][x].topLayer === "playerOnRailRight") {
+        can_I_Move(x, y, 1, 0, "playerOnRailRight");
+        if (grid[y][x + 1].topLayer === "box") {
+          can_I_Move(x + 1, y, 1, 0, "box");
+        }
       }
     }
   }
@@ -221,6 +257,14 @@ function can_I_Move(x, y, dx, dy, cellType) {
   let lookingAhead = true;
   let lastSeenIsBox = false;
   for (let i = 1; lookingAhead; i++) {
+    //collision of on rail players with other players 
+    //NOTE TO SELF: this should stay at the top or else it gets confused because it makes its own tempVar player when it moves
+    if (cellType !== "player" && cellType !== "box") {
+      if (grid[y + dy * i][x + dx * i].topLayer === "player" || grid[y + dy * i][x + dx * i].tempVar === "player") {
+        turnAround(x, y, cellType);
+        lookingAhead = false;
+      }
+    }
             
     //dont move if theres a wall down the line
     if (grid[y + dy * i][x + dx * i].topLayer === "wall") {
@@ -228,15 +272,18 @@ function can_I_Move(x, y, dx, dy, cellType) {
       lookingAhead = false;
     }
 
-    if (grid[y + dy * i][x + dx * i].bottomLayer === "vRail") {
-      if (lastSeenIsBox || dx !== 0 || cellType === "box") {
-        turnAround(x, y, cellType);
-        lookingAhead = false;
-      }
+    if (grid[y + dy * i][x + dx * i].bottomLayer === "vRail" && (dx !== 0 || cellType === "box" || lastSeenIsBox)) {
+      turnAround(x, y, cellType);
+      lookingAhead = false;
+    }
+
+    if (grid[y + dy * i][x + dx * i].bottomLayer === "hRail" && (dy !== 0 || cellType === "box" || lastSeenIsBox)) {
+      turnAround(x, y, cellType);
+      lookingAhead = false;
     }
 
     //move if theres an empty space
-    if (grid[y + dy * i][x + dx * i].topLayer === "empty") {
+    else if (grid[y + dy * i][x + dx * i].topLayer === "empty") {
       lookingAhead = false;
       cellMovement(x, y, dx, dy, cellType);
     }
@@ -265,12 +312,7 @@ function can_I_Move(x, y, dx, dy, cellType) {
       lookingAhead = false;
     }
 
-    if (cellType !== "player" && cellType !== "box") {
-      if (grid[y + dy * i][x + dx * i].topLayer === "player") {
-        turnAround(x, y, cellType);
-        lookingAhead = false;
-      }
-    }
+    
 
     // if theres no wall or empty on topLayer, it must be a player or box, repeat looking one more cell ahead. 
     // NOTE TO SELF: DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
@@ -284,6 +326,12 @@ function turnAround(x,y,cellType) {
   if (cellType === "playerOnRailDown") {
     grid[y][x].tempVar = "playerOnRailUp";
   }
+  if (cellType === "playerOnRailLeft") {
+    grid[y][x].tempVar = "playerOnRailRight";
+  }
+  if (cellType === "playerOnRailRight") {
+    grid[y][x].tempVar = "playerOnRailLeft";
+  }
 }
 
 function cellMovement(x, y, dx, dy, cellType) {
@@ -292,6 +340,8 @@ function cellMovement(x, y, dx, dy, cellType) {
     grid[y + dy][x + dx].tempVar = "filledHole";
     console.log(grid[y + dy][x + dx].tempVar);
   }
+
+  //turns players on rails into correct on rail directions
   if (grid[y + dy][x].bottomLayer === "vRail") {
     if (dy === 1) {
       grid[y + dy][x].tempVar = "playerOnRailDown";
@@ -299,6 +349,19 @@ function cellMovement(x, y, dx, dy, cellType) {
     if (dy === -1){
       grid[y + dy][x].tempVar = "playerOnRailUp";
     }
+  }
+  if (grid[y][x + dx].bottomLayer === "hRail") {
+    if (dy === 1) {
+      grid[y][x + dx].tempVar = "playerOnRailRight";
+    }
+    if (dy === -1){
+      grid[y][x + dx].tempVar = "playerOnRailLeft";
+    }
+  }
+
+  //turns on rails back into players when off of rails
+  if (cellType !== "player" && cellType !== "box" && (grid[y + dy][x + dx].bottomLayer === "ground" || grid[y + dy][x + dx].bottomLayer === "filledHole")) {
+    grid[y + dy][x + dx].tempVar = "player";
   }
   else if (grid[y + dy][x + dx].tempVar === "none") {
     grid[y + dy][x + dx].tempVar = cellType;
