@@ -14,7 +14,7 @@ let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
 let buttons = [];
-let player, ground, boxi, wall, hole, filledHole, vRail, title, playerOnRailUp, playerOnRailDown, playerOnRailLeft, playerOnRailRight;
+let player, ground, boxi, wall, hole, filledHole, vRail, hRail, title, playerOnRailUp, playerOnRailDown, playerOnRailLeft, playerOnRailRight;
 let imageMap = new Map();
 
 class Button {
@@ -61,6 +61,7 @@ function preload() {
   hole = loadImage("images/hole.png");
   filledHole = loadImage("images/filledHole.png");
   vRail = loadImage("images/vRail.png");
+  hRail = loadImage("images/hRail.png");
   playerOnRailUp = loadImage("images/playerOnRailUp.png");
   playerOnRailDown = loadImage("images/playerOnRailDown.png");
   playerOnRailLeft = loadImage("images/playerOnRailLeft.png");
@@ -75,6 +76,7 @@ function preload() {
   imageMap.set("hole", hole);
   imageMap.set("filledHole", filledHole);
   imageMap.set("vRail", vRail);
+  imageMap.set("hRail", hRail);
   imageMap.set("playerOnRailUp", playerOnRailUp);
   imageMap.set("playerOnRailDown", playerOnRailDown);
   imageMap.set("playerOnRailLeft", playerOnRailLeft);
@@ -312,6 +314,16 @@ function can_I_Move(x, y, dx, dy, cellType) {
       lookingAhead = false;
     }
 
+    if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailLeft" && dx === 1) {
+      turnAround(x, y, cellType);
+      lookingAhead = false;
+    }
+
+    if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailRight" && dx === -1) {
+      turnAround(x, y, cellType);
+      lookingAhead = false;
+    }
+
     
 
     // if theres no wall or empty on topLayer, it must be a player or box, repeat looking one more cell ahead. 
@@ -351,10 +363,10 @@ function cellMovement(x, y, dx, dy, cellType) {
     }
   }
   if (grid[y][x + dx].bottomLayer === "hRail") {
-    if (dy === 1) {
+    if (dx === 1) {
       grid[y][x + dx].tempVar = "playerOnRailRight";
     }
-    if (dy === -1){
+    if (dx === -1){
       grid[y][x + dx].tempVar = "playerOnRailLeft";
     }
   }
