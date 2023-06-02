@@ -130,7 +130,7 @@ function keyPressed() {
         grid[y][x].bottomLayer = "vRail";
         grid[y][x].topLayer = "empty";
       }
-      if ( key === "b") {
+      if ( key === "c") {
         grid[y][x].bottomLayer = "hRail";
         grid[y][x].topLayer = "empty";
       }
@@ -198,34 +198,33 @@ function update_grid(player_dx, player_dy) {
           can_I_Move(x + player_dx, y + player_dy, player_dx, player_dy, "box");
         }
       }
+    }
+  }
+  
+  for (let y = 0; y < ROWS; y++) {
+    for (let x = 0; x < COLS; x++) {
       if (grid[y][x].topLayer === "playerOnRailUp") {
         can_I_Move(x, y, 0, -1, "playerOnRailUp");
         if (grid[y - 1][x].topLayer === "box") {
-          can_I_Move(x, y - 1, 0, -1, "box");
+          can_I_Move(x, y - 1, 0, -1, "boxFromRail");
         }
       }
       if (grid[y][x].topLayer === "playerOnRailDown") {
         can_I_Move(x, y, 0, 1, "playerOnRailDown");
         if (grid[y + 1][x].topLayer === "box") {
-          can_I_Move(x, y + 1, 0, 1, "box");
+          can_I_Move(x, y + 1, 0, 1, "boxFromRail");
         }
       }
       if (grid[y][x].topLayer === "playerOnRailLeft") {
         can_I_Move(x, y, -1, 0, "playerOnRailLeft");
         if (grid[y][x - 1].topLayer === "box") {
-          can_I_Move(x - 1, y, -1, 0, "box");
-        }
-      }
-      if (grid[y][x].topLayer === "playerOnRailLeft") {
-        can_I_Move(x, y, -1, 0, "playerOnRailLeft");
-        if (grid[y][x - 1].topLayer === "box") {
-          can_I_Move(x - 1, y, -1, 0, "box");
+          can_I_Move(x - 1, y, -1, 0, "boxFromRail");
         }
       }
       if (grid[y][x].topLayer === "playerOnRailRight") {
         can_I_Move(x, y, 1, 0, "playerOnRailRight");
         if (grid[y][x + 1].topLayer === "box") {
-          can_I_Move(x + 1, y, 1, 0, "box");
+          can_I_Move(x + 1, y, 1, 0, "boxFromRail");
         }
       }
     }
@@ -262,9 +261,10 @@ function can_I_Move(x, y, dx, dy, cellType) {
     //collision of on rail players with other players 
     //NOTE TO SELF: this should stay at the top or else it gets confused because it makes its own tempVar player when it moves
     if (cellType !== "player" && cellType !== "box") {
-      if (grid[y + dy * i][x + dx * i].topLayer === "player" || grid[y + dy * i][x + dx * i].tempVar === "player") {
+      if (grid[y + dy * i][x + dx * i].topLayer === "player" || grid[y + dy * i][x + dx * i].tempVar === "player" || grid[y + dy * i][x + dx * i].tempVar === "box") {
         turnAround(x, y, cellType);
         lookingAhead = false;
+        break;
       }
     }
             
@@ -279,7 +279,7 @@ function can_I_Move(x, y, dx, dy, cellType) {
       lookingAhead = false;
     }
 
-    if (grid[y + dy * i][x + dx * i].bottomLayer === "hRail" && (dy !== 0 || cellType === "box" || lastSeenIsBox)) {
+    else if (grid[y + dy * i][x + dx * i].bottomLayer === "hRail" && (dy !== 0 || cellType === "box" || lastSeenIsBox)) {
       turnAround(x, y, cellType);
       lookingAhead = false;
     }
@@ -372,11 +372,16 @@ function cellMovement(x, y, dx, dy, cellType) {
   }
 
   //turns on rails back into players when off of rails
-  if (cellType !== "player" && cellType !== "box" && (grid[y + dy][x + dx].bottomLayer === "ground" || grid[y + dy][x + dx].bottomLayer === "filledHole")) {
+  if (cellType !== "player" && cellType !== "box" && cellType !== "boxFromRail" && (grid[y + dy][x + dx].bottomLayer === "ground" || grid[y + dy][x + dx].bottomLayer === "filledHole")) {
     grid[y + dy][x + dx].tempVar = "player";
   }
-  else if (grid[y + dy][x + dx].tempVar === "none") {
-    grid[y + dy][x + dx].tempVar = cellType;
+  else if (grid[y + dy][x + dx].tempVar === "none" || grid[y + dy][x + dx].tempVar === "empty") {
+    if (cellType === "boxFromRail") {
+      grid[y + dy][x + dx].tempVar = "box";
+    } 
+    else {
+      grid[y + dy][x + dx].tempVar = cellType;
+    }
   }
 
   //if a cell is going to move into this space, it wont overwrite the tempVar
