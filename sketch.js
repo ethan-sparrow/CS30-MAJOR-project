@@ -47,7 +47,7 @@ class Button {
 }
 
 function preload() {
-  let levelAmount = 2; //NOTE TO SELF: change when new levels are added
+  let levelAmount = 3; //NOTE TO SELF: change when new levels are added
 
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
@@ -261,7 +261,7 @@ function can_I_Move(x, y, dx, dy, cellType) {
     //collision of on rail players with other players 
     //NOTE TO SELF: this should stay at the top or else it gets confused because it makes its own tempVar player when it moves
     if (cellType !== "player" && cellType !== "box") {
-      if (grid[y + dy * i][x + dx * i].topLayer === "player" || grid[y + dy * i][x + dx * i].tempVar === "player" || grid[y + dy * i][x + dx * i].tempVar === "box") {
+      if (grid[y + dy * i][x + dx * i].topLayer !== "empty" || grid[y + dy * i][x + dx * i].tempVar !== "none") {
         turnAround(x, y, cellType);
         lookingAhead = false;
         break;

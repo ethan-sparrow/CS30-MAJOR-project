@@ -21,4 +21,4 @@ i am going to continue working on my puzzle game and try to make it look and fee
 -   sprites displayed above grid for smooth movement and idle animation
 - / undo button 
 -   more levels
--   more mechanics (rails, more box types?)
+- / more mechanics (rails, more box types?)
