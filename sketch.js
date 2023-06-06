@@ -16,6 +16,7 @@ let levels = [];
 let buttons = [];
 let player, ground, boxi, wall, hole, filledHole, vRail, hRail, title, playerOnRailUp, playerOnRailDown, playerOnRailLeft, playerOnRailRight;
 let imageMap = new Map();
+let levelComplete = false;
 
 class Button {
   constructor (x, y, width, height, level, text) {
@@ -47,7 +48,7 @@ class Button {
 }
 
 function preload() {
-  let levelAmount = 3; //NOTE TO SELF: change when new levels are added
+  let levelAmount = 5; //NOTE TO SELF: change when new levels are added
 
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
@@ -170,7 +171,7 @@ function keyPressed() {
       loadLevel();
     }
 
-    if (key === "x") {
+    if (key === "x" && !levelComplete) {
       if (gridMemory.length > 0) {
         grid = structuredClone(gridMemory[gridMemory.length - 1]);
         gridMemory.pop();
@@ -186,71 +187,79 @@ function keyPressed() {
 }
 
 function update_grid(player_dx, player_dy) {
-  gridMemory.push(structuredClone(grid));
-
-  for (let y = 0; y < ROWS; y++) {
-    for (let x = 0; x < COLS; x++) {
-
-      //player updates
-      if (grid[y][x].topLayer === "player") {
-        can_I_Move(x, y, player_dx, player_dy, "player");
-        if (grid[y + player_dy][x + player_dx].topLayer === "box") {
-          can_I_Move(x + player_dx, y + player_dy, player_dx, player_dy, "box");
-        }
-      }
-    }
-  }
-  
-  for (let y = 0; y < ROWS; y++) {
-    for (let x = 0; x < COLS; x++) {
-      if (grid[y][x].topLayer === "playerOnRailUp") {
-        can_I_Move(x, y, 0, -1, "playerOnRailUp");
-        if (grid[y - 1][x].topLayer === "box") {
-          can_I_Move(x, y - 1, 0, -1, "boxFromRail");
-        }
-      }
-      if (grid[y][x].topLayer === "playerOnRailDown") {
-        can_I_Move(x, y, 0, 1, "playerOnRailDown");
-        if (grid[y + 1][x].topLayer === "box") {
-          can_I_Move(x, y + 1, 0, 1, "boxFromRail");
-        }
-      }
-      if (grid[y][x].topLayer === "playerOnRailLeft") {
-        can_I_Move(x, y, -1, 0, "playerOnRailLeft");
-        if (grid[y][x - 1].topLayer === "box") {
-          can_I_Move(x - 1, y, -1, 0, "boxFromRail");
-        }
-      }
-      if (grid[y][x].topLayer === "playerOnRailRight") {
-        can_I_Move(x, y, 1, 0, "playerOnRailRight");
-        if (grid[y][x + 1].topLayer === "box") {
-          can_I_Move(x + 1, y, 1, 0, "boxFromRail");
-        }
-      }
-    }
-  }
-  let remainingHoles = 0;
-  for (let y = 0; y < ROWS; y++) {
-    for (let x = 0; x < COLS; x++) {
-      if (grid[y][x].tempVar === "filledHole") {
-        grid[y][x].bottomLayer = "filledHole";
-        grid[y][x].topLayer = "empty";
-        grid[y][x].tempVar = "none";
-      }
-      else if (grid[y][x].tempVar !== "none") {
-        grid[y][x].topLayer = grid[y][x].tempVar;
-        grid[y][x].tempVar = "none";
-      }
-
-      //tracks the holes left in the level and finishes the level when its done
-      if (grid[y][x].bottomLayer === "hole") {
-        remainingHoles++;
-      }
-    }
-  }
-  if (remainingHoles === 0 && !levelMaking) {
+  //this will hapen once a key is pressed after the end of level
+  if (levelComplete) {
     currentLevel++;
     loadLevel();
+    levelComplete = false;
+  }
+
+  else {
+    gridMemory.push(structuredClone(grid));
+
+    for (let y = 0; y < ROWS; y++) {
+      for (let x = 0; x < COLS; x++) {
+
+        //player updates
+        if (grid[y][x].topLayer === "player") {
+          can_I_Move(x, y, player_dx, player_dy, "player");
+          if (grid[y + player_dy][x + player_dx].topLayer === "box") {
+            can_I_Move(x + player_dx, y + player_dy, player_dx, player_dy, "box");
+          }
+        }
+      }
+    }
+  
+    for (let y = 0; y < ROWS; y++) {
+      for (let x = 0; x < COLS; x++) {
+        if (grid[y][x].topLayer === "playerOnRailUp") {
+          can_I_Move(x, y, 0, -1, "playerOnRailUp");
+          if (grid[y - 1][x].topLayer === "box") {
+            can_I_Move(x, y - 1, 0, -1, "boxFromRail");
+          }
+        }
+        if (grid[y][x].topLayer === "playerOnRailDown") {
+          can_I_Move(x, y, 0, 1, "playerOnRailDown");
+          if (grid[y + 1][x].topLayer === "box") {
+            can_I_Move(x, y + 1, 0, 1, "boxFromRail");
+          }
+        }
+        if (grid[y][x].topLayer === "playerOnRailLeft") {
+          can_I_Move(x, y, -1, 0, "playerOnRailLeft");
+          if (grid[y][x - 1].topLayer === "box") {
+            can_I_Move(x - 1, y, -1, 0, "boxFromRail");
+          }
+        }
+        if (grid[y][x].topLayer === "playerOnRailRight") {
+          can_I_Move(x, y, 1, 0, "playerOnRailRight");
+          if (grid[y][x + 1].topLayer === "box") {
+            can_I_Move(x + 1, y, 1, 0, "boxFromRail");
+          }
+        }
+      }
+    }
+    let remainingHoles = 0;
+    for (let y = 0; y < ROWS; y++) {
+      for (let x = 0; x < COLS; x++) {
+        if (grid[y][x].tempVar === "filledHole") {
+          grid[y][x].bottomLayer = "filledHole";
+          grid[y][x].topLayer = "empty";
+          grid[y][x].tempVar = "none";
+        }
+        else if (grid[y][x].tempVar !== "none") {
+          grid[y][x].topLayer = grid[y][x].tempVar;
+          grid[y][x].tempVar = "none";
+        }
+
+        //tracks the holes left in the level and finishes the level when its done
+        if (grid[y][x].bottomLayer === "hole") {
+          remainingHoles++;
+        }
+      }
+    }
+    if (remainingHoles === 0 && !levelMaking) {
+      levelComplete = true;
+    }
   }
 }
 
@@ -392,11 +401,13 @@ function cellMovement(x, y, dx, dy, cellType) {
 
 function draw() {
   background("pink");
-  //colours every cell
   if (currentLevel >= 0) {
     imageMode(CORNER);
     if (!levelMaking) {
       translate(width/2 - ROWS*cellSize/2, 0);
+    }
+    if (levelComplete) {
+      image(title, width/2, height/2.5, 800, 400);
     }
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {

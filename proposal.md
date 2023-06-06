@@ -22,3 +22,7 @@ i am going to continue working on my puzzle game and try to make it look and fee
 - / undo button 
 -   more levels
 - / more mechanics (rails, more box types?)
+
+## A note
+
+this project has been fun, but i think more forsight would have made it alot easier and allowed me to complete more of my Nice to have list. for example, it would have been great to make the game object have classes or something other than storing what they are only in the cells. i dont regret making it that way though, because now i know better.
