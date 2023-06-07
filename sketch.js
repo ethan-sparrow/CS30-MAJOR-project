@@ -14,7 +14,7 @@ let levelMaking = false;
 let currentLevel = -2;
 let levels = [];
 let buttons = [];
-let player, ground, boxi, wall, hole, filledHole, vRail, hRail, title, playerOnRailUp, playerOnRailDown, playerOnRailLeft, playerOnRailRight;
+let player, ground, boxi, wall, hole, filledHole, vRail, hRail, playerOnRailUp, playerOnRailDown, playerOnRailLeft, playerOnRailRight, title, winScreen;
 let imageMap = new Map();
 let levelComplete = false;
 
@@ -69,6 +69,7 @@ function preload() {
   playerOnRailRight = loadImage("images/playerOnRailRight.png");
 
   title = loadImage("images/title.png");
+  winScreen = loadImage("images/winScreen.png");
 
   imageMap.set("player", player);
   imageMap.set("ground", ground);
@@ -403,17 +404,32 @@ function draw() {
   background("pink");
   if (currentLevel >= 0) {
     imageMode(CORNER);
+    textAlign(CENTER, CENTER);
+    textSize(cellSize);
+    push();
     if (!levelMaking) {
       translate(width/2 - ROWS*cellSize/2, 0);
-    }
-    if (levelComplete) {
-      image(title, width/2, height/2.5, 800, 400);
     }
     for (let y = 0; y < ROWS; y++) {
       for (let x = 0; x < COLS; x++) {
         cellDisplay(grid[y][x].bottomLayer, x, y);
         cellDisplay(grid[y][x].topLayer, x, y);
       }
+    }
+    pop();
+    imageMode(CENTER);
+    if (levelComplete) {
+      image(winScreen, width/2, height/2, 400, 400);
+    }
+
+    if (currentLevel === 0) {
+      text("Use WASD to move", width/2, height/4);
+      text("Fill all holes to win", width/2, height/1.25);
+    }
+
+    if (currentLevel === 1) {
+      text("Use R to reset", width/4, height/4);
+      text("And X to undo", width/1.35, height/1.7);
     }
   }
   else if (currentLevel < 0) {
