@@ -48,7 +48,7 @@ class Button {
 }
 
 function preload() {
-  let levelAmount = 5; //NOTE TO SELF: change when new levels are added
+  let levelAmount = 8; //NOTE TO SELF: change when new levels are added
 
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
