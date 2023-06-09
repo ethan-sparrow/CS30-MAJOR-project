@@ -237,13 +237,13 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -314,6 +314,16 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -325,22 +335,12 @@
     },
     {
       "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
       "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -524,17 +524,17 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -566,16 +566,6 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "box",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -612,6 +602,16 @@
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -624,6 +624,21 @@
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -648,32 +663,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "box",
       "tempVar": "none"
     },
     {
@@ -689,6 +679,16 @@
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -720,16 +720,6 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "box",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -766,6 +756,16 @@
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -832,17 +832,17 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -913,13 +913,13 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
