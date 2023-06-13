@@ -78,93 +78,6 @@
   ],
   "1": [
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    }
-  ],
-  "2": [
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -172,123 +85,6 @@
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    }
-  ],
-  "3": [
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -302,8 +98,212 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hole",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    }
+  ],
+  "2": [
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hole",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hole",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hole",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    }
+  ],
+  "3": [
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hole",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hole",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hRail",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -319,68 +319,68 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -396,52 +396,7 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -451,13 +406,58 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "hole",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -473,6 +473,11 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -494,16 +499,6 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -528,13 +523,18 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "hole",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -550,6 +550,11 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -561,7 +566,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "player",
       "tempVar": "none"
     },
     {
@@ -571,36 +576,11 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "box",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hRail",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -611,7 +591,27 @@
     },
     {
       "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -627,6 +627,11 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -638,17 +643,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -682,13 +677,18 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "hole",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -704,52 +704,7 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "box",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -759,13 +714,58 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "hole",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -781,68 +781,68 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -858,52 +858,7 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -913,13 +868,58 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "hole",
+      "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -935,8 +935,13 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -945,8 +950,23 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "ground",
-      "topLayer": "wall",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
       "tempVar": "none"
     },
     {
@@ -955,8 +975,8 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -965,38 +985,18 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "vRail",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -1022,8 +1022,8 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -1037,8 +1037,8 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "box",
       "tempVar": "none"
     },
     {
@@ -1052,8 +1052,8 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -1062,7 +1062,7 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
+      "bottomLayer": "hole",
       "topLayer": "empty",
       "tempVar": "none"
     },

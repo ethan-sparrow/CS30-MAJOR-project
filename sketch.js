@@ -49,7 +49,8 @@ class Button {
 }
 
 function preload() {
-  let levelAmount = 12; //NOTE TO SELF: change when new levels are added
+  //NOTE TO SELF: change when new levels are added
+  let levelAmount = 15; 
 
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
@@ -293,12 +294,17 @@ function can_I_Move(x, y, dx, dy, cellType) {
       lookingAhead = false;
     }
 
-    if (grid[y + dy * i][x + dx * i].bottomLayer === "vRail" && (dx !== 0 || cellType === "box" || lastSeenIsBox)) {
+    if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailUp" || grid[y + dy * i][x + dx * i].topLayer === "playerOnRailDown" || grid[y + dy * i][x + dx * i].topLayer === "playerOnRailLeft"|| grid[y + dy * i][x + dx * i].topLayer === "playerOnRailRight") {
       turnAround(x, y, cellType);
       lookingAhead = false;
     }
 
-    else if (grid[y + dy * i][x + dx * i].bottomLayer === "hRail" && (dy !== 0 || cellType === "box" || lastSeenIsBox)) {
+    if (grid[y + dy * i][x + dx * i].bottomLayer === "vRail" && (dx !== 0 || cellType === "box" && i === 1 || lastSeenIsBox)) {
+      turnAround(x, y, cellType);
+      lookingAhead = false;
+    }
+
+    else if (grid[y + dy * i][x + dx * i].bottomLayer === "hRail" && (dy !== 0 || cellType === "box" && i === 1 || lastSeenIsBox)) {
       turnAround(x, y, cellType);
       lookingAhead = false;
     }
@@ -322,29 +328,6 @@ function can_I_Move(x, y, dx, dy, cellType) {
     else {
       lastSeenIsBox = false;
     }
-
-    if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailUp" && dy === 1) {
-      turnAround(x, y, cellType);
-      lookingAhead = false;
-    }
-
-    if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailDown" && dy === -1) {
-      turnAround(x, y, cellType);
-      lookingAhead = false;
-    }
-
-    if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailLeft" && dx === 1) {
-      turnAround(x, y, cellType);
-      lookingAhead = false;
-    }
-
-    if (grid[y + dy * i][x + dx * i].topLayer === "playerOnRailRight" && dx === -1) {
-      turnAround(x, y, cellType);
-      lookingAhead = false;
-    }
-
-    
-
     // if theres no wall or empty on topLayer, it must be a player or box, repeat looking one more cell ahead. 
     // NOTE TO SELF: DONT ADD MORE TOP LAYER STUFF WITHOUT UPDATING THIS
   }
@@ -404,7 +387,7 @@ function cellMovement(x, y, dx, dy, cellType) {
   }
 
   //if a cell is going to move into this space, it wont overwrite the tempVar
-  if (grid[y][x].tempVar === "none") {
+  if (grid[y][x].tempVar === "none" || grid[y][x].tempVar === "empty") {
     grid[y][x].tempVar = "empty";
   }
 }

@@ -83,63 +83,63 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -160,7 +160,27 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -171,7 +191,17 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "wall",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -181,7 +211,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "wall",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -190,43 +220,13 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -237,73 +237,73 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
       "tempVar": "none"
     }
   ],
@@ -314,73 +314,73 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "box",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
       "tempVar": "none"
     }
   ],
@@ -391,11 +391,6 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -417,32 +412,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -458,6 +428,36 @@
     {
       "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -468,73 +468,73 @@
       "tempVar": "none"
     },
     {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "hole",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "player",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
       "bottomLayer": "empty",
       "topLayer": "empty",
       "tempVar": "none"
     },
     {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
+      "bottomLayer": "empty",
       "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
       "tempVar": "none"
     }
   ],
@@ -545,11 +545,6 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -571,7 +566,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -581,26 +576,6 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hRail",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -611,7 +586,32 @@
     },
     {
       "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
       "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "empty",
+      "topLayer": "empty",
       "tempVar": "none"
     }
   ],
@@ -622,11 +622,6 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -638,42 +633,12 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -684,6 +649,41 @@
     {
       "bottomLayer": "hole",
       "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -699,11 +699,6 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
       "bottomLayer": "ground",
       "topLayer": "wall",
       "tempVar": "none"
@@ -715,17 +710,22 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "box",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
       "tempVar": "none"
     },
     {
@@ -745,7 +745,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -776,8 +776,18 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "player",
       "tempVar": "none"
     },
     {
@@ -792,22 +802,17 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "player",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -817,12 +822,7 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
@@ -853,7 +853,32 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
+      "topLayer": "empty",
+      "tempVar": "none"
+    },
+    {
+      "bottomLayer": "ground",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -889,31 +914,6 @@
     },
     {
       "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "empty",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "ground",
-      "topLayer": "wall",
-      "tempVar": "none"
-    },
-    {
-      "bottomLayer": "hole",
       "topLayer": "empty",
       "tempVar": "none"
     },
@@ -930,8 +930,8 @@
       "tempVar": "none"
     },
     {
-      "bottomLayer": "empty",
-      "topLayer": "empty",
+      "bottomLayer": "ground",
+      "topLayer": "wall",
       "tempVar": "none"
     },
     {
