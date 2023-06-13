@@ -7,7 +7,7 @@ i am going to continue working on my puzzle game and try to make it look and fee
 ## Needs to have
 
 - / sprites
--   music 
+- / music 
 - / reset button 
 - / better player movement (no more wierd interactions when next to other players) 
 - / main menu 
@@ -17,10 +17,11 @@ i am going to continue working on my puzzle game and try to make it look and fee
 ## Nice to have
 
 -   ability to hold down movement keys rather than repeatedly hitting them 
--   CUSTOM sprites and music
+- / CUSTOM sprites 
+-   CUSTOM music
 -   sprites displayed above grid for smooth movement and idle animation
 - / undo button 
--   more levels
+- / more levels
 - / more mechanics (rails, more box types?)
 
 ## A note

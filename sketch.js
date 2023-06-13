@@ -17,6 +17,7 @@ let buttons = [];
 let player, ground, boxi, wall, hole, filledHole, vRail, hRail, playerOnRailUp, playerOnRailDown, playerOnRailLeft, playerOnRailRight, title, winScreen;
 let imageMap = new Map();
 let levelComplete = false;
+let music, winSound;
 
 class Button {
   constructor (x, y, width, height, level, text) {
@@ -48,7 +49,7 @@ class Button {
 }
 
 function preload() {
-  let levelAmount = 10; //NOTE TO SELF: change when new levels are added
+  let levelAmount = 12; //NOTE TO SELF: change when new levels are added
 
   for (let i = 0; i < levelAmount; i++) {
     levels.push(loadJSON(`levels/${i}.json`));
@@ -83,6 +84,9 @@ function preload() {
   imageMap.set("playerOnRailDown", playerOnRailDown);
   imageMap.set("playerOnRailLeft", playerOnRailLeft);
   imageMap.set("playerOnRailRight", playerOnRailRight);
+
+  music = loadSound("sound/music.mp3");
+  winSound = loadSound("sound/winSound.mp3");
 }
 
 function setup() {
@@ -93,6 +97,10 @@ function setup() {
 }
 
 function keyPressed() {
+  if (!music.isPlaying()) {
+    music.play();
+    music.setLoop(true);
+  }
   if (currentLevel >= 0) {
   //for editing purposes
     
@@ -260,6 +268,7 @@ function update_grid(player_dx, player_dy) {
     }
     if (remainingHoles === 0 && !levelMaking) {
       levelComplete = true;
+      winSound.play();
     }
   }
 }
@@ -434,6 +443,7 @@ function draw() {
   }
   else if (currentLevel < 0) {
     for (let i = 0; i < buttons.length; i++) {
+      // NOTE TO SELF: this causes an error to happen when staring a level, but the program keeps going so its fine??????
       buttons[i].display();
     }
     if (currentLevel === -2) {
