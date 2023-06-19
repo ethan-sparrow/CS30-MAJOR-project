@@ -1,0 +1,3 @@
+## Reflection
+
+overall this project was very fun to code and design. the biggest thing i regret is that i didnt use classes enough. i was kinda confused by them but it would have made things alot easier later on. The hardest part was the rails, because they comlicated collisions by traveling in a different direction than the player (which would have been easier if i used classes). I wanted to have sprites move smoothly between cells, but i was unable to (once again, because i wasnt using classes). overall im happy with the project. the needs to have was easy, but i reached the limits of the grid system i had made and was unable to complete my nice to have. 

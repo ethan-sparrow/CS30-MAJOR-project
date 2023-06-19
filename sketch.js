@@ -1,10 +1,8 @@
-// project title
+// Cool Bird Puzzles
 // Ethan Sparrow
 // April 25th 2023
-//
-// Extra for Experts:
-// - describe what you did to take this project "above and beyond"
 
+//global variables
 const ROWS = 15;
 const COLS = 15;
 let cellSize;
@@ -57,6 +55,7 @@ function preload() {
   }
 
   //there HAS to be a better way to do this...
+  //there isnt.
   player = loadImage("images/player.png");
   ground = loadImage("images/ground.png");
   boxi = loadImage("images/box.png");
